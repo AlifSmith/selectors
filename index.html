@@ -11,6 +11,26 @@
             div#id-div{
                 background-color:yellow;
             }
+
+            li.my-list{
+                background-color:orange;
+            }
+
+            li.new-list,div#new-div{
+                background-color:blue;
+            }
+
+            div.grandkids li{
+                background-color:red;
+            }
+
+            .add-border{
+                border:1px solid #000;
+            }
+
+            .add-background{
+                background-color:green;
+            }
         </style>
     </head>
     <body>
@@ -23,6 +43,9 @@
                 <li><a href="#id">id</a></li>
                 <li><a href="#class">class</a></li>
                 <li><a href="#compound">compound</a></li>
+                <li><a href="#descendant">descendant</a></li>
+                <li><a href="#child">child</a></li>
+                <li><a href="#multipe">multipe</a></li>
             </ul>
         </nav> 
     </header>           
@@ -41,6 +64,101 @@
 
             <p>Here's what it looks like:</p>
             <div id="id-div">Inside my-div</div>
+        </fieldset>
+
+        <fieldset>
+            <legend><a id="class">class</a></legend>
+            <p>classes can be applied to more than one item per page</p>
+            <p>Here's how we hook a class attribute to an element:</p>
+            <pre><code>class="my list"</code></pre>
+            <p>Here's how the CSS is applied to the element:</p>
+            <pre><code>li.my-list{
+    background-color:orange;
+}</code></pre>
+
+
+            <p>Here's what it looks like:</p>
+            <div>
+                <ul>
+                    <li class="my-list">I'm in an li with a class of my-list</li>
+                    <li class="my-list">I'm in an li with a class of my-list</li>
+                    <li class="my-list">I'm in an li with a class of my-list</li>
+                </ul>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend><a id="compound">compound</a></legend>
+            <p>compound selectors allow multiple selector blocks seperated by commas</p>
+            <p>Here's how the CSS is applied to the element:</p>
+            <pre><code>li.new-list,div#new-div{
+    background-color:blue;
+}</code></pre>
+
+
+            <p>Here's what it looks like:</p>
+            <div>
+                <ul>
+                    <li class="new-list">I'm in an li with a class of new-list</li>
+                    <li class="new-list">I'm in an li with a class of new-list</li>
+                    <li class="new-list">I'm in an li with a class of new-list</li>
+                </ul>
+            </div>
+            <div id="new-div">Inside new-div</div>
+        </fieldset>
+
+        <fieldset>
+            <legend><a id="descendant">descendant</a></legend>
+            <p>descendant selectors let us access elements at any depth within the current element</p>
+            <p>Here's how the CSS is applied to the element:</p>
+            <pre><code>div.grandkids li{
+    background-color:red;
+}</code></pre>
+
+
+            <p>Here's what it looks like:</p>
+            <div class="grandkids">
+                <ul>
+                    <li>I'm in an li inside the grandkids div</li>
+                    <li>I'm in an li inside the grandkids div</li>
+                    <li>I'm in an li inside the grandkids div</li>
+
+                </ul>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend><a id="child">descendant</a></legend>
+            <p>A child selector lets us access the next immidiate elements inside the current element</p>
+            <p>Here's how the CSS is applied to the element:</p>
+            <pre><code>div.grandkids li{
+    background-color:green;
+}</code></pre>
+
+
+            <p>Here's what it looks like:</p>
+            <div>
+                <ul>
+                    <li> class="</li>
+
+                </ul>
+            </div>
+
+        </fieldset>
+
+        <fieldset>
+            <legend><a id="class">multiple_class</a></legend>
+            <p>more that one class can be applied to an element</p>
+            <p>Here's how we hook a class attribute to an element:</p>
+            <pre><code>class="add-background"</code></pre>
+    
+
+            <p>Here's what it looks like:</p>
+            <div>
+                <ul>
+                    <li class="add-background add-browser</li>
+                </ul>
+            </div>
         </fieldset>
 
         <footer class="page-footer">
